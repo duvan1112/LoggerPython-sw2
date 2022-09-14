@@ -1,21 +1,22 @@
-from colorama import init, Fore
+import datetime as date
+
 from colorama import init, Fore
 
-import datetime as dt
-import log_class.logger as lg
+import log_class.logger as log_class
 
 init(autoreset=True)
 
-class LoggerConsole(lg.Logger):
-    
-    def info(self, message, object):
-        print(f'{Fore.BLUE}{dt.datetime.now()} [INFO] {message, object}')
-    
-    def warning(self, message, object):
-        print(f'{Fore.YELLOW}{dt.datetime.now()} [WARNING] {message, object}')
 
-    def error(self, message, object):
-       print(f'{Fore.RED}{dt.datetime.now()} [ERROR] {message, object}')
+class LoggerConsole(log_class.Logger):
 
-    def debug(self, message, object):
-        print(f'{Fore.MAGENTA}{dt.datetime.now()} [DEBUG] {message, object}')
+    def print_info(self, message, object):
+        print(f'{Fore.BLUE}{date.datetime.now()} [INFO] {message, object}')
+
+    def print_warning(self, message, object):
+        print(f'{Fore.YELLOW}{date.datetime.now()} [WARNING] {message, object}')
+
+    def print_error(self, message, object):
+        print(f'{Fore.RED}{date.datetime.now()} [ERROR] {message, object}')
+
+    def print_debug(self, message, object):
+        print(f'{Fore.MAGENTA}{date.datetime.now()} [DEBUG] {message, object}')

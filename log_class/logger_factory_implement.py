@@ -5,7 +5,8 @@ from log_class.logger_console import LoggerConsole
 from log_class.logger_file import LoggerFile
 from log_class.logger_mail import LoggerMail
 
-class LoggerFactoryImpl(LoggerFactory):
+
+class LoggerFactoryImplement(LoggerFactory):
 
     def get_logger(self, type) -> Logger:
         dic = {
